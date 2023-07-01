@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import font awesome through CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">    
+    <title>Parker | pkrm.dev</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000" />
+    <meta name="apple-mobile-web-app-title" content="Parker M." />
+
+    <meta property="og:title" content="Parker M." />
+    <meta property="og:url" content="https://pkrm.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="This is my website. Take a look around." />
+
+    <meta name="description" content="This is my website. Take a look around." />
+    <meta name="robots" content="index, follow" />
+    <meta name="http-equiv" content="X-Robots-Tag : index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+    <section id="main">
+        <a id="hamburger"><i class="fa-solid fa-bars"></i></a>
+        <a id="x"><i class="fa-solid fa-times"></i></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+
+        <header>
+            <h2>Hi, I'm</h2>
+            <h1>PARKER</h1>
+        </header>
+
+        <nav class="icons">
+            <a href="https://github.com/fiji05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:contact@pkrm.dev" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </nav>
+
+        <a href="#about" id="about-text"><i class="fa fa-angle-down"></i></a>
+    </section>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <p>I am a Senior in high school and enjoy learning about new technologies. I currently use HTML/CSS, Python, Javascript, and SQL. I have competed at the district and state levels in SkillsUSA for Cybersecurity and Programming, as have placed 2nd for the Congressional App Challenge. This year I plan on learning more about web3 and artificial intelligence.</p>
+
+        <a href="#projects"><i class="fa fa-angle-down"></i></a>
+    </section>
+
+    <section id="projects">
+        <div class="slider">
+            <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide5" class="slider__nav"/>
+            <div class="slider__inner">
+                <div class="slider__contents">
+                    <h2 class="slider__caption">PeakPass</h2>
+                    <p class="slider__txt">
+                        PeakPass is a password manager that also doubles as a tool to check your passwords against those that have been affected in previous data breaches. Along with this we offer a blog to teach users about standards that keep them safe online.
+                        <br>
+                        <br>
+                        <a href="https://github.com/peakpass/peakpass" target="_blank" referrerpolicy="no-referrer" class="slider__button">Source Code</a>
+                        <a href="https://peakpass.pkrm.dev" target="_blank" referrerpolicy="no-referrer" class="slider__button">View Site</a>
+                    </p>
+                </div>
+                <div class="slider__contents">
+                    <h2 class="slider__caption">Aqua Bot</h2>
+                    <p class="slider__txt">
+                        A multipurpose Discord bot made with the discord.py 2.0 library. Aqua Bot has features like moderation, an economy, gambling. In addition to this, users can play music from YouTube, Spotify, and SoundCloud thanks to lavalink.py
+                        <br>
+                        <br>
+                        <a href="https://github.com/fiji05/aquabot" target="_blank" referrerpolicy="no-referrer" class="slider__button">Source Code</a>
+                    </p>
+                </div>
+                <div class="slider__contents">
+                    <h2 class="slider__caption">elijahmvaldez</h2>
+                    <p class="slider__txt">
+                        Elijah Valdez is an independent American singer, songwriter, and producer. This website was created to promote the artist's music and social media as well as their online store.
+                        <br>
+                        <br>
+                        <a href="https://github.com/fiji05/elijahmvaldez" target="_blank" referrerpolicy="no-referrer" class="slider__button">Source Code</a>
+                        <a href="https://elijahmvaldez.com" target="_blank" referrerpolicy="no-referrer" class="slider__button">View Site</a>
+                    </p>
+                </div>
+                <div class="slider__contents">
+                    <h2 class="slider__caption">VaultCheck</h2>
+                    <p class="slider__txt">
+                        Uses the bitwarden-cli tool, the Twilio API, and the HaveIBeenPwned API in order to check your vault for leaked passwords. If a compromised password is found, it alerts you with a text message.
+                        <br>
+                        <br>
+                        <a href="https://github.com/Fiji05/bitwarden-password-checker" target="_blank" referrerpolicy="no-referrer" class="slider__button">Source Code</a>
+                    </p>
+                </div>
+                <div class="slider__contents">
+                    <h2 class="slider__caption">Twilio News</h2>
+                    <p class="slider__txt">
+                        News Messenger sends the current news and weather, along with an affirmation using the Twilio API. Links can also be shortened using personal or non personal domains with the rebrandly.com API.
+                        <br>
+                        <br>
+                        <a href="https://github.com/Fiji05/twilio-news" target="_blank" referrerpolicy="no-referrer" class="slider__button">Source Code</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/@mojs/curve-editor"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>

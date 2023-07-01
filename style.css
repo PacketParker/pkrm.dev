@@ -1,0 +1,397 @@
+* {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    background-image: url(/bg.png);
+    background-size: cover;
+    color: #fff;
+    will-change: transform;
+}
+
+.fa-angle-down {
+    color: #fff;
+    font-size: 3.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5vh;
+}
+
+.fa-angle-down:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+/* Navbar mobile icons */
+#hamburger i {
+    font-size: 4vh;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: none;
+}
+
+#x i {
+    font-size: 4vh;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: none;
+}
+
+
+/* Main page (Hi I'm Parker) */
+#main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 3.5vh;
+    margin: 0 25px;
+}
+
+nav a:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons i {
+    font-size: 6vh;
+    margin: 2vh 50px;
+}
+
+.icons i:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+header {
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 16vh;
+}
+
+header h2 {
+    font-size: 6vh;
+    animation: bringIn 2s;
+    padding-right: 50px;
+}
+
+/* Main section media query for tablets */
+@media screen and (max-width: 1280px) {
+    nav a {
+        font-size: 2.5vh;
+        margin-bottom: 7vh;
+    }
+
+    header h1 {
+        font-size: 10vh;
+    }
+
+    header h2 {
+        font-size: 5vh;
+        padding-right: 25px;
+    }
+
+    .icons {
+        margin-top: 5vh;
+    }
+
+    .icons i {
+        font-size: 5vh;
+        margin: 0 25px;
+    }
+}
+
+/* Main section media query for mobile */
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        position: absolute;
+    }
+
+    nav a {
+        font-size: 3.5vh;
+        margin-bottom: 5vh;
+    }
+
+    header {
+        flex-direction: column;
+        bottom: 100px;
+    }
+
+    header h1 {
+        font-size: 10vh;
+    }
+
+    header h2 {
+        font-size: 5vh;
+        padding-right: 0;
+    }
+
+    .icons {
+        flex-direction: row;
+        position: absolute;
+        bottom: 30vh;
+    }
+
+    .icons i {
+        font-size: 6vh;
+        margin: 0 5px;
+    }
+}
+
+/* Create the keyframes fade in */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* About me section */
+#about {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#about h1 {
+    font-size: 8vh;
+    margin-bottom: 3vh;
+}
+
+#about p {
+    font-size: 3vh;
+    width: 50%;
+    text-align: center;
+}
+
+/* About section media query for tablets */
+@media screen and (max-width: 1280px) {
+    #about p {
+        font-size: 2.5vh;
+        width: 80%;
+    }
+}
+
+/* About section media query for mobile */
+@media screen and (max-width: 600px) {
+    #about h1 {
+        font-size: 6vh;
+    }
+    #about p {
+        font-size: 2.5vh;
+        width: 80%;
+    }
+}
+
+/* Slider for Projects - Credit to this codepen - https://codepen.io/maheshambure21/pen/qZZrxy */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.slider {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.slider__nav {
+    width: 2vh;
+    height: 2vh;
+    margin: 2vh 1vh;
+    border-radius: 50%;
+    z-index: 10;
+    outline: 14px solid white;
+    outline-offset: -14px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.slider__nav:checked {
+    -webkit-animation: check 0.4s linear forwards;
+    animation: check 0.4s linear forwards;
+}
+
+.slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+    left: 0%;
+}
+
+.slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+    left: -100%;
+}
+
+.slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+    left: -200%;
+}
+
+.slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+    left: -300%;
+}
+
+.slider__nav:checked:nth-of-type(5) ~ .slider__inner {
+    left: -400%;
+}
+
+.slider__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+    height: 100%;
+    -webkit-transition: left 0.7s;
+    transition: left 0.7s;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.slider__contents {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__caption {
+    font-size: 8vh;
+    margin: 3vh;
+    max-width: 75%;
+}
+
+.slider__txt {
+    color: white;
+    max-width: 30%;
+    font-size: 3vh;
+}
+
+.slider__button {
+    font-size: 3vh;
+    padding: .75vh 2vh;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 2vh;
+}
+
+.slider__button:hover {
+    opacity: .6;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+/* Projects section media query for tablets */
+@media screen and (max-width: 1280px) {
+    .slider__caption {
+        max-width: 95%;
+    }
+    .slider__txt {
+        font-size: 2.5vh;
+        max-width: 80%;
+    }
+
+    .slider__button {
+        font-size: 2.5vh;
+    }
+
+    .slider__nav {
+        margin-bottom: 5vh;
+    }
+}
+
+/* Projects section media query for mobile */
+@media screen and (max-width: 600px) {
+    .slider__caption {
+        font-size: 6vh;
+        max-width: 95%;
+    }
+    .slider__txt {
+        font-size: 2.5vh;
+        max-width: 80%;
+    }
+
+    .slider__button {
+        font-size: 2.5vh;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 2.5vh;
+    }
+
+    .slider__nav {
+        margin-bottom: 5vh;
+    }
+}
+
+
+
+
+
+
+/* REWORK THIS SHIT BECAUSE I DONT LIKE IT OR UNDERSTAND IT */
+
+
+@-webkit-keyframes check {
+    50% {
+        outline-color: #333;
+    }
+    100% {
+        outline-color: #333;
+    }
+}
+
+@keyframes check {
+    50% {
+        outline-color: #333;
+    }
+    100% {
+        outline-color: #333;
+    }
+}
