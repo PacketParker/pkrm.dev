@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- import font awesome through CDN link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Contact | pkrm.dev</title>
 
     <meta name="robots" content="index, follow">
@@ -31,7 +27,7 @@
 <body>
     <a href="/" id="back-home">Back Home</a>
     <div class="container">
-        <p id="attention">ATTENTION: To send any sensitive information, please email me at contact@pkrm.dev and encrypt the message with my <a href="/parker-m.asc" id="pgp-key">PGP Public Key</a>. This form should not be thought of as a secure way of communication.</p>
+        <p id="attention">ATTENTION: To send any sensitive information, please email me at contact@pkrm.dev and encrypt the message with my <a href="/parker-m.asc" id="pgp-key">PGP public key</a>. This form should not be thought of as a secure way of communication.</p>
         <form name="contact" onsubmit="event.preventDefault(); checkForm();">
             <input name="name" placeholder="Name">
             <input name="email" placeholder="Email">
@@ -97,14 +93,14 @@
     @media only screen and (max-width: 600px) {
         .container {
             position: absolute;
-            top: 55%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
     }
 
     #attention {
-        font-size: 2vh;
+        font-size: 2.5vh;
         text-align: center;
         margin: 1vh;
     }
@@ -112,7 +108,7 @@
     #pgp-key {
         color: #fff;
         text-decoration: underline;
-        font-size: 2vh;
+        font-size: 2.5vh;
     }
 
     form {
