@@ -9,18 +9,16 @@ const mainh2 = main.getElementsByTagName('h2')[0];
 const iconNav = document.querySelectorAll('nav')[1];
 const icons = document.querySelectorAll('nav')[1].getElementsByTagName('i');
 const arrow = document.getElementById('about-text')
+const projectArrow = document.getElementById('projects-text');
 const projects = document.getElementById('projects');
 const footer = document.querySelector('footer');
-const footerATag = document.querySelector('#pgp-key');
 
-// If the user is on desktop, make the href point to parker-m.asc, but if they are on
-// mobile or tablet make the href point to parker-m.txt
-if (window.innerWidth >= 768) {
-    footerATag.href = 'parker-m.asc';
-} else {
-    footerATag.href = 'parker-m.txt';
-    footerATag.innerHTML = 'PGP Key (TXT)';
+// If the user is on mobile, remove the fingerprint from the footer, also remove
+// the down arrow buttons
+if (window.innerWidth <= 768) {
     footer.removeChild(footer.lastChild);
+    arrow.style.display = 'none';
+    projectArrow.style.display = 'none';
 }
 
 // If the user is on mobile
