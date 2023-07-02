@@ -17,8 +17,6 @@ const footer = document.querySelector('footer');
 // the down arrow buttons
 if (window.innerWidth <= 768) {
     footer.removeChild(footer.lastChild);
-    arrow.style.display = 'none';
-    projectArrow.style.display = 'none';
 }
 
 // If the user is on mobile
