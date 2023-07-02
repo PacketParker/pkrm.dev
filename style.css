@@ -27,6 +27,29 @@ body{
     cursor: pointer;
 }
 
+/* Fixed footer */
+footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #0d0d0d;
+    font-size: 1.75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration: underline;
+    color: white
+}
+
+footer a:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
 /* Navbar mobile icons */
 #hamburger i {
     font-size: 4vh;

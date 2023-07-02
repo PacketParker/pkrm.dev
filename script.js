@@ -10,6 +10,18 @@ const iconNav = document.querySelectorAll('nav')[1];
 const icons = document.querySelectorAll('nav')[1].getElementsByTagName('i');
 const arrow = document.getElementById('about-text')
 const projects = document.getElementById('projects');
+const footer = document.querySelector('footer');
+const footerATag = document.querySelector('#pgp-key');
+
+// If the user is on desktop, make the href point to parker-m.asc, but if they are on
+// mobile or tablet make the href point to parker-m.txt
+if (window.innerWidth >= 768) {
+    footerATag.href = 'parker-m.asc';
+} else {
+    footerATag.href = 'parker-m.txt';
+    footerATag.innerHTML = 'PGP Key (TXT)';
+    footer.removeChild(footer.lastChild);
+}
 
 // If the user is on mobile
 if (window.innerWidth < 768) {
@@ -146,15 +158,6 @@ function mobileAnimations() {
         delay: 2250,
         easing: 'sin.out'
     }).play();
-
-    let iconBringIn3 = new mojs.Html({
-        el: icons[2],
-        y: {25: 0},
-        opacity: {0: 1},
-        duration: 1000,
-        delay: 2500,
-        easing: 'sin.out'
-    }).play();
 }
 
 // Rotate the projects every 4 seconds, only for desktop
@@ -213,8 +216,3 @@ projects.addEventListener('touchend', function (e) {
         }
     }
 });
-
-function sendContactMessage() {
-    // Send a POST request to https://contact.pkrm.dev with the form data
-    
-}
