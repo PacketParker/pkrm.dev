@@ -19,7 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 15vh;
+    bottom: 10vh;
 }
 
 .fa-angle-down:hover {
@@ -37,7 +37,7 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 10;
-    padding: 3vh;
+    padding: 2vh;
 }
 
 footer a {
@@ -372,7 +372,7 @@ header h2 {
     }
 
     .slider__nav {
-        margin-bottom: 5vh;
+        margin-bottom: 10vh;
     }
 }
 
@@ -399,14 +399,6 @@ header h2 {
         margin-bottom: 5vh;
     }
 }
-
-
-
-
-
-
-/* REWORK THIS SHIT BECAUSE I DONT LIKE IT OR UNDERSTAND IT */
-
 
 @-webkit-keyframes check {
     50% {

@@ -9,7 +9,6 @@ const mainh2 = main.getElementsByTagName('h2')[0];
 const iconNav = document.querySelectorAll('nav')[1];
 const icons = document.querySelectorAll('nav')[1].getElementsByTagName('i');
 const arrow = document.getElementById('about-text')
-const projectArrow = document.getElementById('projects-text');
 const projects = document.getElementById('projects');
 const footer = document.querySelector('footer');
 
@@ -18,7 +17,6 @@ const footer = document.querySelector('footer');
 if (window.innerWidth <= 768) {
     footer.removeChild(footer.lastChild);
     arrow.style.display = 'none';
-    projectArrow.style.display = 'none';
 }
 
 // If the user is on mobile

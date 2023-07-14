@@ -27,7 +27,7 @@
 <body>
     <a href="/" id="back-home">Back Home</a>
     <div class="container">
-        <p id="attention">ATTENTION: To send any sensitive information, please email me at contact@pkrm.dev and encrypt the message with my <a href="/parker-m.asc" id="pgp-key">PGP public key</a>. This form should not be thought of as a secure way of communication.</p>
+        <p id="attention">ATTENTION: To send any sensitive information, please email me at <a href="mailto:contact@pkrm.dev" id="contact-email">contact@pkrm.dev</a> and encrypt the message with my <a href="/contact.asc" id="pgp-key">PGP public key</a>. This form should not be thought of as a secure way of communication.</p>
         <form name="contact" onsubmit="event.preventDefault(); checkForm();">
             <input name="name" placeholder="Name">
             <input name="email" placeholder="Email">
@@ -105,7 +105,7 @@
         margin: 1vh;
     }
 
-    #pgp-key {
+    #pgp-key, #contact-email {
         color: #fff;
         text-decoration: underline;
         font-size: 2.5vh;
