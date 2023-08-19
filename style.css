@@ -302,15 +302,11 @@ header h2 {
     left: -300%;
 }
 
-.slider__nav:checked:nth-of-type(5) ~ .slider__inner {
-    left: -400%;
-}
-
 .slider__inner {
     position: absolute;
     top: 0;
     left: 0;
-    width: 500%;
+    width: 400%;
     height: 100%;
     -webkit-transition: left 0.7s;
     transition: left 0.7s;
