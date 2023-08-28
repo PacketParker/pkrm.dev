@@ -50,10 +50,17 @@ footer a:hover {
     cursor: pointer;
 }
 
+/* Media query for footer on tablets */
+@media screen and (max-width: 1280px) {
+    footer {
+        font-size: 2.5vw;
+    }
+}
+
 /* Media query for footer on mobile */
 @media screen and (max-width: 600px) {
     footer {
-        font-size: 1.432vw;
+        font-size: 5vw;
     }
 }
 
@@ -141,16 +148,16 @@ header h2 {
 /* Main section media query for tablets */
 @media screen and (max-width: 1280px) {
     nav a {
-        font-size: 1.302vw;
+        font-size: 4vw;
         margin-bottom: 3.646vw;
     }
 
     header h1 {
-        font-size: 5.208vw;
+        font-size: 12vw;
     }
 
     header h2 {
-        font-size: 2.604vw;
+        font-size: 7vw;
         padding-right: 25px;
     }
 
@@ -159,21 +166,30 @@ header h2 {
     }
 
     .icons i {
-        font-size: 2.604vw;
+        font-size: 7vw;
         margin: 0 25px;
+    }
+
+    .fa-angle-down {
+        font-size: 5vw;
+        bottom: 15vw;
     }
 }
 
 /* Main section media query for mobile */
 @media screen and (max-width: 600px) {
+    #hamburger i,
+    #x i {
+        font-size: 8vw;
+    }
     nav {
         flex-direction: column;
         position: absolute;
     }
 
     nav a {
-        font-size: 1.823vw;
-        margin-bottom: 2.604vw;
+        font-size: 7vw;
+        margin-bottom: 15vw;
     }
 
     header {
@@ -182,23 +198,28 @@ header h2 {
     }
 
     header h1 {
-        font-size: 5.208vw;
+        font-size: 17vw;
     }
 
     header h2 {
-        font-size: 2.604vw;
+        font-size: 12vw;
         padding-right: 0;
     }
 
     .icons {
         flex-direction: row;
         position: absolute;
-        bottom: 15.625vw;
+        bottom: 75vw;
     }
 
     .icons i {
-        font-size: 3.125vw;
+        font-size: 12vw;
         margin: 0 5px;
+    }
+
+    .fa-angle-down {
+        font-size: 8vw;
+        bottom: 20vw;
     }
 }
 
@@ -237,8 +258,11 @@ header h2 {
 
 /* About section media query for tablets */
 @media screen and (max-width: 1280px) {
+    #about h1 {
+        font-size: 10vw;
+    }
     #about p {
-        font-size: 1.302vw;
+        font-size: 4vw;
         width: 80%;
     }
 }
@@ -246,10 +270,10 @@ header h2 {
 /* About section media query for mobile */
 @media screen and (max-width: 600px) {
     #about h1 {
-        font-size: 3.125vw;
+        font-size: 12vw;
     }
     #about p {
-        font-size: 1.302vw;
+        font-size: 5vw;
         width: 80%;
     }
 }
@@ -357,42 +381,49 @@ header h2 {
 @media screen and (max-width: 1280px) {
     .slider__caption {
         max-width: 95%;
+        font-size: 10vw;
     }
     .slider__txt {
-        font-size: 1.302vw;
+        font-size: 4vw;
         max-width: 80%;
     }
 
     .slider__button {
-        font-size: 1.302vw;
+        font-size: 4vw;
     }
 
     .slider__nav {
-        margin-bottom: 5.208vw;
+        margin-bottom: 2.64vw;
+        width: 3vw;
+        height: 3vw;
+        margin: 0 2vw 10vw 2vw;
     }
 }
 
 /* Projects section media query for mobile */
 @media screen and (max-width: 600px) {
     .slider__caption {
-        font-size: 3.125vw;
+        font-size: 12vw;
         max-width: 95%;
     }
     .slider__txt {
-        font-size: 1.302vw;
+        font-size: 5vw;
         max-width: 80%;
     }
 
     .slider__button {
-        font-size: 1.302vw;
+        font-size: 5vw;
         display: flex;
         justify-content: center;
         margin: 0;
-        margin-bottom: 1.302vw;
+        margin-bottom: 6vw;
     }
 
     .slider__nav {
-        margin-bottom: 2.604vw;
+        margin-bottom: 2.64vw;
+        width: 5vw;
+        height: 5vw;
+        margin: 0 2vw 10vw 2vw;
     }
 }
 
