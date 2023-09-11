@@ -33,9 +33,10 @@ function validateForm() {
 
 function checkForm() {
     if (nameInput.value.length > 0 && email.value.length > 0 && message.value.length > 0) {
+        const response = document.querySelector('.response');
         // Send a POST request to the server with the form data in JSON
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://contact.pkrm.dev', true);
+        xhr.open('POST', 'https://contact.pkrm.dev');
         xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 
         const body = JSON.stringify({
@@ -43,8 +44,11 @@ function checkForm() {
             email: email.value,
             message: message.value
         });
+
+        // Send the body and log 'success' if no error, otherwise log 'error'
+        // Use onerror to log the error
+        xhr.send(body);
         xhr.onload = () => {
-            const response = document.querySelector('.response');
             if (xhr.status == 200) {
                 response.innerHTML = 'Thank you for submitting your message. I will get back to you as soon as possible.';
                 response.style.visibility = 'visible';
@@ -52,13 +56,17 @@ function checkForm() {
                 nameInput.value = '';
                 email.value = '';
                 message.value = '';
-            } else {
-                response.innerHTML = "Sorry, there was an error when submitting your message. Please try again later.";
-                response.style.visibility = 'visible';
-                response.style.color = "#FA5B5B"
             }
-        };
-        xhr.send(body);
+        }
+        xhr.onerror = () => {
+            response.innerHTML = "Sorry, there was an error when submitting your message. Please try again later.";
+            response.style.visibility = 'visible';
+            response.style.color = "#FA5B5B"
+            nameInput.value = '';
+            email.value = '';
+            message.value = '';
+        }
+
 
     } else {
         if (nameInput.value.length == 0) {
