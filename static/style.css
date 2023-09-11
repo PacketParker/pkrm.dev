@@ -6,7 +6,7 @@
 
 body{
     overflow-x: hidden;
-    background-image: url(/bg.png);
+    background-image: url(/static/bg.png);
     background-size: cover;
     color: #fff;
     will-change: transform;
