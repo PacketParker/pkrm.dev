@@ -183,32 +183,3 @@ function slideProjects() {
         });
     }
 }
-
-// For mobile - whenever the user slides left or right on the screen in the projects
-// section, slide to the next or previous project
-projects.addEventListener('touchend', function (e) {
-    // Get the touch position
-    touchEndX = e.changedTouches[0].pageX;
-
-    if (touchStartX > touchEndX) {
-        let checked = document.querySelector('input[name="slider"]:checked');
-        let next = checked.nextElementSibling;
-
-        if (next.nodeName === 'DIV') {
-            document.querySelector('input[name="slider"]').checked = true;
-        } else if (next) {
-            next.checked = true;
-        }
-    }
-
-    if (touchStartX < touchEndX) {
-        let checked = document.querySelector('input[name="slider"]:checked');
-        let prev = checked.previousElementSibling;
-
-        if (prev) {
-            prev.checked = true;
-        } else {
-            document.querySelector('input[name="slider"]:last-of-type').checked = true;
-        }
-    }
-});
