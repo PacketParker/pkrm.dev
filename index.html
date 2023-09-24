@@ -46,7 +46,9 @@
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <!-- Send to 'end' otherwise the carousel points at the bottom won't appear because of
+            the footer covering them -->
+            <a href="#end">Projects</a>
             <a href="/contact">Contact</a>
         </nav>
 
@@ -66,8 +68,8 @@
     <section id="about">
         <h1>About Me</h1>
         <p>I am a Senior in high school and enjoy learning about new technologies. I currently use HTML/CSS, Python, Javascript, and SQL. I have competed at the district and state levels in SkillsUSA for Cybersecurity and Programming, as have placed 2nd for the Congressional App Challenge. This year I plan on learning more about web3 and artificial intelligence.</p>
-
-        <a href="#projects" id="projects-text"><i class="fa fa-angle-down"></i></a>
+        <!-- Link to 'end' rather than 'projects' otherwise it wouldn't go to the bottom completely -->
+        <a href="#end" id="projects-text"><i class="fa fa-angle-down"></i></a>
     </section>
 
     <section id="projects">
@@ -119,6 +121,7 @@
     </section>
 
     <footer><a title="My PGP Public Key" href="/contact.asc">PGP Public Key</a>&emsp;&emsp;Fingerprint: 58B7 6B8B BAB8 794D 21E2 579C 95CD 2E0C 7E32 9F2A</footer>
+    <a id="end"></a>
 </body>
 </html>
 
