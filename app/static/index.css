@@ -6,7 +6,7 @@
 
 body{
     overflow-x: hidden;
-    background-image: url(/bg.png);
+    background-image: url(/static/bg.png);
     background-size: cover;
     color: #fff;
     will-change: transform;
@@ -209,7 +209,7 @@ header h2 {
     .icons {
         flex-direction: row;
         position: absolute;
-        bottom: 75vw;
+        bottom: 60vw;
     }
 
     .icons i {
