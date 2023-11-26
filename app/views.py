@@ -1,10 +1,12 @@
 import flask
 import os
 import discord
+import dotenv
 
 app = flask.Flask(__name__)
 app.secret_key = os.urandom(32)
-webhook_url = os.environ.get('WEBHOOK_URL')
+dotenv.load_dotenv()
+webhook_url = os.getenv("WEBHOOK_URL")
 
 @app.route('/', methods=['GET'])
 def index():

@@ -30,7 +30,7 @@
     <a href="/" id="back-home">Back Home</a>
     <div class="container">
         <p id="attention">ATTENTION: To send any sensitive information, please email me at <a href="mailto:contact@pkrm.dev" id="contact-email">contact@pkrm.dev</a> and encrypt the message with my <a href="/static/contact.asc" id="pgp-key">PGP public key</a>. This form should not be thought of as a secure way of communication.</p>
-        <form actions="/contact" name="contact"  onsubmit="event.preventDefault(); checkForm();">
+        <form actions="/contact" method="POST" name="contact"  onsubmit="event.preventDefault(); checkForm();">
             <input name="name" placeholder="Name">
             <input name="email" placeholder="Email">
             <textarea name="message" placeholder="Message"></textarea>
