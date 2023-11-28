@@ -360,6 +360,11 @@ header h2 {
     font-size: 1.563vw;
 }
 
+.slider__txt .inner-reference {
+    color: white;
+    text-decoration: underline;
+}
+
 .slider__button {
     font-size: 1.563vw;
     padding: 0.391vw 1.042vw;
