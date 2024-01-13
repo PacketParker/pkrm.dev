@@ -4,13 +4,16 @@ import discord
 import dotenv
 
 app = flask.Flask(__name__)
-app.secret_key = os.urandom(32)
 dotenv.load_dotenv()
 webhook_url = os.getenv("WEBHOOK_URL")
 
 @app.route('/', methods=['GET'])
 def index():
     return flask.render_template('index.html')
+
+@app.route('/about', methods=['GET'])
+def about():
+    return flask.render_template('about.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -36,3 +39,12 @@ def contact():
         # If any error happens for any reason, return the contact page with error
         except:
             return flask.render_template('contact.html', error=True)
+
+@app.route('/pgp', methods=['GET'])
+def pgp():
+    return flask.render_template('pgp.html')
+
+@app.route('/parker.asc', methods=['GET'])
+def parker():
+    # Send the file to download
+    return flask.send_file('static/parker.asc', as_attachment=True)

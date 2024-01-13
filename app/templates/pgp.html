@@ -18,13 +18,25 @@
     </nav>
 
     <div class="container">
-        <h1>Hello, I'm Parker</h1>
-        <p>A student with a strong passion for technology and privacy.</p>
+        <h1>Copy my key below, or click <a href="/parker.asc" style="text-decoration: underline; color: #9F9FAA;">here</a> to download it.</h1>
+        <p>
 
-        <a href="mailto:contact@pkrm.dev" target="_blank"><img class="icons" src="{{ url_for('static', filename='mail.png') }}"></a>
-        <a href="https://github.com/packetparker" target="_blank"><img class="icons" src="{{ url_for('static', filename='github.png') }}"></a>
-        <!-- <a href="https://linkedin.com" target="_blank"><img class="icons" src="{{ url_for('static', filename='linkedin.png') }}"></a> -->
-        <a href="/pgp" target="_blank"><img class="icons" src="{{ url_for('static', filename='gnupg.png') }}"></a>
+            -----BEGIN PGP PUBLIC KEY BLOCK-----
+            <br><br>
+            xjMEZI06YRYJKwYBBAHaRw8BAQdAxymP7jguJxjtKKqGQ/fSXGwZVzOiix6iRS1F
+            6BVMu+3NG1BhcmtlciBNIDxjb250YWN0QHBrcm0uZGV2PsKTBBMWCgA7FiEEWLdr
+            i7q4eU0h4leclc0uDH4ynyoFAmSNOmECGwMFCwkIBwICIgIGFQoJCAsCBBYCAwEC
+            HgcCF4AACgkQlc0uDH4ynyrBIAEAu7y2oebvsBb+tJXPUOZkjqE+rsAwiDgHLj3U
+            gYMM4XUBALPsZ4IgA5mWhTDTV00QLHmVtybCJzCdc7LzyvQH78cHzjgEZI06YRIK
+            KwYBBAGXVQEFAQEHQLBpSX+qSOtSFVrp9+VfJGHsoPaIhoxIjz44byrtLXZ4AwEI
+            B8J4BBgWCgAgFiEEWLdri7q4eU0h4leclc0uDH4ynyoFAmSNOmECGwwACgkQlc0u
+            DH4ynyqQhAEAuo1HGXEKkBUzji+cCW3wF/oqg0cQklQzfKUkifLhiC8A/2gdilxS
+            AYHKY0lEJandkOjid/otDdiIZCUBt5mXjncL
+            =ni8o
+            <br>
+            -----END PGP PUBLIC KEY BLOCK-----
+
+        </p>
     </div>
 
     <footer>PGP Fingerprint: 58B7 6B8B BAB8 794D 21E2 579C 95CD 2E0C 7E32 9F2A</footer>
@@ -99,54 +111,31 @@
         }
     }
 
-
     /* Container styles */
     .container {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         text-align: center;
-        width: 500px;
-    }
-
-    .container h1 {
-        margin-bottom: 0;
+        width: 600px;
+        word-break: break-all;
     }
 
     .container p {
-        margin: 2rem 0 3rem 0;
-    }
-
-    .icons {
-        margin: 0 1rem;
-        height: 50px;
-        width: 50px;
-        color: #9F9FAA;
-    }
-
-    .icons:hover {
-        cursor: pointer;
-        opacity: 0.6;
-        transition: opacity 0.25s ease-in-out;
-
+        text-align: left;
     }
 
     /* Continer media query for mobile */
     @media only screen and (max-width: 600px) {
         .container {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             width: 300px;
         }
 
         .container p {
             margin: 1rem 0 2rem 0;
-        }
-
-        .icons {
-            height: 40px;
-            width: 40px;
         }
     }
 
@@ -163,3 +152,18 @@
         width: 90vw;
     }
 </style>
+
+<script>
+    // Get the h1
+    const h1 = document.querySelector('h1');
+
+    // Get the p tag
+    const p = document.querySelector('p');
+
+    // If the user is on mobile, remove the p tag and change the h1
+    if (window.innerWidth <= 600) {
+        p.remove();
+        h1.innerHTML = 'Click <a href="/parker.asc" style="text-decoration: underline; color: #9F9FAA;">here</a> to download my PGP key.';
+        h1.style.wordBreak = 'normal';
+    }
+</script>
