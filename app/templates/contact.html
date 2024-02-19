@@ -8,6 +8,9 @@
     <!-- Encourage indexing -->
     <meta name="robots" content="index, follow">
 
+    <!-- Add altcha.js file -->
+    <script async defer src="{{ url_for('static', filename='altcha.js') }}" type="module"></script>
+
     <meta property="og:title" content="Contact | pkrm.dev"/>
     <meta property="og:url" content="https://pkrm.dev/contact"/>
     <meta property="og:type" content="website"/>
@@ -35,6 +38,8 @@
             <input type="text" name="email" placeholder="Email">
             <textarea name="message" placeholder="Message"></textarea>
             <input type="submit" value="Submit">
+            <!-- Add altcha widget which auto verifies on page load and is invisible -->
+            <altcha-widget challengeurl="/altcha-challenge" auto="onload" style="display: none; opacity: 0;"></altcha-widget>
         </form>
 
         {% if success %}
@@ -202,6 +207,10 @@
         textarea {
             width: 250px;
         }
+    }
+
+    altcha-widget {
+        visibility: none;
     }
 
     /* Success/Error messages */

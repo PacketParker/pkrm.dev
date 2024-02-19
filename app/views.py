@@ -2,10 +2,17 @@ import flask
 import os
 import discord
 import dotenv
+import hashlib
+import secrets
+import hmac
+import json
+import base64
+import random
 
 app = flask.Flask(__name__)
 dotenv.load_dotenv()
 webhook_url = os.getenv("WEBHOOK_URL")
+hmac_key = random.randbytes(500)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -22,6 +29,25 @@ def contact():
 
     if flask.request.method == 'POST':
         try:
+            # Decode payload
+            data = json.loads(base64.b64decode(flask.request.form['altcha']).decode())
+
+            # Validate algorithm
+            if data['algorithm'] != 'SHA-256':
+                return flask.render_template('contact.html', error=True)
+            # Validate challenge
+            expected_challenge = hashlib.sha256(
+                (data['salt'] + str(data['number'])).encode()
+            ).hexdigest()
+            if data['challenge'] != expected_challenge:
+                return flask.render_template('contact.html', error=True)
+            # Validate signature
+            signature = hmac.new(hmac_key, data['challenge'].encode(), hashlib.sha256).hexdigest()
+            if data['signature'] != signature:
+                return flask.render_template('contact.html', error=True)
+
+            # All checks passed, send off form data
+
             name = flask.request.form['name']
             email = flask.request.form['email']
             message = flask.request.form['message']
@@ -39,6 +65,25 @@ def contact():
         # If any error happens for any reason, return the contact page with error
         except:
             return flask.render_template('contact.html', error=True)
+
+@app.route('/altcha-challenge', methods=['GET'])
+def altcha_challenge():
+    salt = secrets.token_urlsafe(25)
+    secret_number = random.randint(10000, 50000)
+
+    challenge_data = f"{salt}{secret_number}".encode()
+    challenge = hashlib.sha256(challenge_data).hexdigest()
+
+    signature = hmac.new(hmac_key, challenge.encode(), hashlib.sha256).hexdigest()
+
+    response = {
+        'algorithm': 'SHA-256',
+        'challenge': challenge,
+        'salt': salt,
+        'signature': signature
+    }
+
+    return flask.jsonify(response)
 
 @app.route('/pgp', methods=['GET'])
 def pgp():
