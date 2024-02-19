@@ -1,0 +1,137 @@
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #242528;
+    color: #9F9FAA;
+}
+
+
+/* Navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #212223;
+    color: #9F9FAA;
+}
+
+nav a {
+    text-decoration: none;
+    color: #9F9FAA;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 15%;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 15%;
+}
+
+/* Navbar media query for mobile */
+@media only screen and (max-width: 600px) {
+    nav a {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .navbar-left {
+        margin: 0 1rem;
+    }
+
+    .navbar-right {
+        margin: 0 1rem;
+    }
+
+    .navbar-right a {
+        margin-left: 1rem;
+    }
+}
+
+
+/* Container styles */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.75rem;
+    text-align: center;
+    width: 500px;
+}
+
+.container h1 {
+    margin-bottom: 0;
+}
+
+.container p {
+    margin: 2rem 0 3rem 0;
+}
+
+.icons {
+    margin: 0 1rem;
+    height: 50px;
+    width: 50px;
+    color: #9F9FAA;
+}
+
+.icons:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.25s ease-in-out;
+
+}
+
+/* Continer media query for mobile */
+@media only screen and (max-width: 600px) {
+    .container {
+        font-size: 1.5rem;
+        width: 300px;
+    }
+
+    .container p {
+        margin: 1rem 0 2rem 0;
+    }
+
+    .icons {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+
+/* Footer styles */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 90vw;
+}
+
+/* Footer media query for mobile */
+@media only screen and (max-width: 600px) {
+    footer {
+        bottom: -2rem;
+    }
+}
