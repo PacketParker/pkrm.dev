@@ -92,6 +92,13 @@ nav a:hover {
     color: #9F9FAA;
 }
 
+/* Icons media query for mobile */
+@media only screen and (max-width: 600px) {
+    .icons {
+        margin: 0 0.5rem;
+    }
+}
+
 .icons:hover {
     cursor: pointer;
     opacity: 0.6;
