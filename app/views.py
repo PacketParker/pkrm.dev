@@ -33,7 +33,9 @@ def contact():
     if flask.request.method == "POST":
         try:
             # Decode payload
-            data = json.loads(base64.b64decode(flask.request.form["altcha"]).decode())
+            data = json.loads(
+                base64.b64decode(flask.request.form["altcha"]).decode()
+            )
 
             # Validate algorithm
             if data["algorithm"] != "SHA-256":
@@ -61,7 +63,10 @@ def contact():
 
             embed = discord.Embed(
                 title="New Message",
-                description=f"**Name:** ` {name} `\n**Email:** ` {email} `\n**Message:** ` {message} `",
+                description=(
+                    f"**Name:** ` {name} `\n**Email:** `"
+                    f" {email} `\n**Message:** ` {message} `"
+                ),
                 color=0x85C0F7,
             )
             webhook.send(embed=embed)
@@ -80,7 +85,9 @@ def altcha_challenge():
     challenge_data = f"{salt}{secret_number}".encode()
     challenge = hashlib.sha256(challenge_data).hexdigest()
 
-    signature = hmac.new(hmac_key, challenge.encode(), hashlib.sha256).hexdigest()
+    signature = hmac.new(
+        hmac_key, challenge.encode(), hashlib.sha256
+    ).hexdigest()
 
     response = {
         "algorithm": "SHA-256",
@@ -95,6 +102,11 @@ def altcha_challenge():
 @app.route("/pgp", methods=["GET"])
 def pgp():
     return flask.render_template("pgp.html")
+
+
+@app.route("/robots.txt", methods=["GET"])
+def robots():
+    return flask.send_file("static/robots.txt")
 
 
 @app.route("/parker.asc", methods=["GET"])
