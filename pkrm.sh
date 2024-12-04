@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 run.py
+gunicorn -b 0.0.0.0:4343 run:app
