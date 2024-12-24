@@ -2,7 +2,7 @@ const moon = document.getElementById('moon');
 const sun = document.getElementById('sun');
 
 moon.addEventListener('click', () => {
-    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('light');
 
     // Fade out moon and fade in sun
     moon.style.opacity = '0';
@@ -16,7 +16,7 @@ moon.addEventListener('click', () => {
 });
 
 sun.addEventListener('click', () => {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
 
     // Fade out sun and fade in moon
     sun.style.opacity = '0';

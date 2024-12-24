@@ -1,29 +1,19 @@
 html {
     font-family: "Open Sans", Arial;
-    color: #454545;
+    color: #9F9FAA;
     scroll-behavior: smooth;
-}
-
-html.dark * {
     background-color: #242528;
-    color: #9F9FAA;
 }
 
-html.dark svg,
-html.dark #about a {
-    color: #9F9FAA;
-    fill: #9F9FAA;
+html.light * {
+    color: #444;
+    background-color: #F0F0F0;
 }
 
-html.increased-contrast * {
-    background-color: #FFF;
-    color: #050505;
-}
-
-html.increased-contrast svg,
-html.increased-contrast #about a {
-    fill: #050505;
-    color: #050505;
+html.light svg,
+html.light #about a {
+    color: #444;
+    fill: #444;
 }
 
 body {
@@ -51,7 +41,7 @@ nav {
 nav a {
     margin: 0 1rem;
     text-decoration: none;
-    color: #454545;
+    color: #9F9FAA;
 }
 
 nav a:hover {
@@ -68,7 +58,6 @@ nav a:hover {
     right: 0;
     margin: 1rem;
     font-size: 1.5rem;
-    color: #454545;
 }
 
 #moon, #sun {
@@ -154,7 +143,6 @@ svg:hover {
     bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
-    color: #454545;
     font-size: 2rem;
 }
 
@@ -205,7 +193,7 @@ svg:hover {
 
 #about a {
     text-decoration: underline;
-    color: #454545;
+    color: #9F9FAA;
 }
 
 #about a:hover {
