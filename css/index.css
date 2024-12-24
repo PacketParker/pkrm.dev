@@ -20,22 +20,19 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     min-height: 200vh;
 }
 
 nav {
+    width: 100vw;
     font-weight: 600;
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1rem;
     text-align: center;
-    margin-top: 2rem;
-    width: 90vw;
 }
 
 nav a {
@@ -51,13 +48,31 @@ nav a:hover {
     transition: opacity 0.25s ease-in-out;
 }
 
+/* Nav media query for mobile */
+@media only screen and (max-width: 600px) {
+    nav a {
+        display: none;
+        text-align: right;
+    }
+
+    nav #toggle {
+        display: block;
+    }
+}
+
 #toggle {
     /* Move to the top right of the screen */
     position: absolute;
     top: 0;
-    right: 0;
-    margin: 1rem;
-    font-size: 1.5rem;
+    right: 100px;
+    cursor: pointer;
+}
+
+/* Toggle media query for mobile */
+@media only screen and (max-width: 600px) {
+    #toggle {
+        right: 50px;
+    }
 }
 
 #moon, #sun {
@@ -73,15 +88,7 @@ nav a:hover {
     opacity: 0;
 }
 
-/* Toggle media query for mobile */
-@media only screen and (max-width: 600px) {
-    #toggle {
-        display: none;
-    }
-}
-
-
-/* Container styles */
+/* Header styles */
 header {
     position: absolute;
     top: 45%;
@@ -103,12 +110,12 @@ header h2 {
 /* Header media query for mobile */
 @media only screen and (max-width: 600px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 33px;
         width: 300px;
     }
 
     header h2 {
-        margin: 1rem 0 2rem 0;
+        font-size: 23px;
         width: 300px;
     }
 }
@@ -118,7 +125,7 @@ header a {
 }
 
 svg {
-    margin: 0 1rem;
+    margin: 0 15px;
     height: 50px;
     width: 50px;
 }
@@ -128,7 +135,7 @@ svg {
     svg {
         height: 40px;
         width: 40px;
-        margin: 0 0.5rem;
+        margin: 0 5px;
     }
 }
 
@@ -140,7 +147,7 @@ svg:hover {
 
 #down-arrow {
     position: absolute;
-    bottom: 2%;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
