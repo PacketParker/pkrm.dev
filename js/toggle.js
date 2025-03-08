@@ -2,7 +2,7 @@ const moon = document.getElementById('moon');
 const sun = document.getElementById('sun');
 
 if (!document.cookie.includes('preference')) {
-    setPreference(false);
+    setPreference(true);
 } else {
     const preference = document.cookie.split(';').find(cookie => cookie.includes('preference')).split('=')[1];
     if (preference === 'true') {
