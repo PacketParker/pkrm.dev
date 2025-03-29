@@ -14,14 +14,6 @@ html #about a{
     fill: #444;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    min-height: 200vh;
-}
-
 nav {
     width: 100vw;
     font-weight: 600;
