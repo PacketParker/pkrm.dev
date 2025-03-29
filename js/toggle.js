@@ -1,61 +1,61 @@
 const moon = document.getElementById('moon');
 const sun = document.getElementById('sun');
 
-if (!document.cookie.includes('preference')) {
-    setPreference(true);
+/**
+ * Check if the user has dark mode enabled
+ */
+if (localStorage.getItem('darkMode') === 'true') {
+    turnDark();
 } else {
-    const preference = document.cookie.split(';').find(cookie => cookie.includes('preference')).split('=')[1];
-    if (preference === 'true') {
-        turnLight();
+    turnLight();
+}
+
+/**
+ * Update local storage with the current theme
+ */
+function updateLocalStorage() {
+    if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'true');
     } else {
-        turnDark();
-    }
-
-}
-
-function setPreference(value) {
-    if (typeof value === 'boolean') {
-        const expires = new Date();
-        expires.setFullYear(expires.getFullYear() + 1); // 1 year
-        document.cookie = `preference=${value};expires=${expires.toUTCString()};path=/`;
-        turnLight();
+        localStorage.setItem('darkMode', 'false');
     }
 }
 
+/**
+ * Toggle the theme to dark
+ */
 function turnLight() {
-    document.documentElement.classList.add('light');
+    document.documentElement.classList.remove('dark');
 
-    moon.style.opacity = '0';
-    sun.style.opacity = '1';
-
-    setTimeout(() => {
-        moon.style.display = 'none';
-        sun.style.display = 'block';
-    }
-    , 100);
-}
-
-function turnDark() {
-    document.documentElement.classList.remove('light');
+    sun.style.display = 'none';
+    moon.style.display = 'block';
 
     sun.style.opacity = '0';
     moon.style.opacity = '1';
 
-    setTimeout(() => {
-        sun.style.display = 'none';
-        moon.style.display = 'block';
-    }
-    , 100);
+    updateLocalStorage();
 }
 
+/**
+ * Toggle the theme to light
+ */
+function turnDark() {
+    document.documentElement.classList.add('dark');
+
+    moon.style.display = 'none';
+    sun.style.display = 'block';
+
+    moon.style.opacity = '0';
+    sun.style.opacity = '1';
+
+    updateLocalStorage();
+}
+
+// Check for icon clicks
 moon.addEventListener('click', () => {
-    document.documentElement.classList.add('light');
-    setPreference(true);
-    turnLight();
+    turnDark();
 });
 
 sun.addEventListener('click', () => {
-    document.documentElement.classList.remove('light');
-    setPreference(false);
-    turnDark();
+    turnLight();
 });

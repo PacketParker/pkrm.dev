@@ -1,17 +1,15 @@
 html {
-    font-family: "Open Sans", Arial;
-    color: #9F9FAA;
     scroll-behavior: smooth;
-    background-color: #242528;
 }
 
-html.light * {
+html * {
+    font-family: "Open Sans", Arial;
     color: #444;
     background-color: #F0F0F0;
 }
 
-html.light svg,
-html.light #about a {
+html svg,
+html #about a{
     color: #444;
     fill: #444;
 }
@@ -38,7 +36,6 @@ nav {
 nav a {
     margin: 0 1rem;
     text-decoration: none;
-    color: #9F9FAA;
 }
 
 nav a:hover {
@@ -200,7 +197,6 @@ svg:hover {
 
 #about a {
     text-decoration: underline;
-    color: #9F9FAA;
 }
 
 #about a:hover {

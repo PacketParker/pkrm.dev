@@ -7,16 +7,34 @@
     <meta http-equiv="onion-location" content="http://o2o2o2yfrueii33hxjja3foegbkjckxg2fy4vr4y4pqvnk2oxqknvjqd.onion">
     <!-- Dicourage indexing -->
     <meta name="robots" content="noindex, nofollow, noarchive">
-
-    <link rel="stylesheet", href="/css/index.css">
     <meta property="og:title" content="Parker M."/>
     <meta property="og:url" content="https://pkrm.dev/"/>
     <meta property="og:type" content="website"/>
     <meta property="og:description" content="My personal website. See my projects."/>
 
-    <script src="/js/toggle.js" defer></script>
-
     <title>Parker M.</title>
+
+    <script>
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <style>
+        html.dark * {
+            color: #9F9FAA;
+            background-color: #242528;
+        }
+
+        html.dark svg,
+        html.dark #about a {
+            color: #9F9FAA;
+            fill: #9F9FAA;
+        }
+    </style>
+
+    <script src="/js/toggle.js" defer></script>
+    <link rel="preload", href="/css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
     <nav>
