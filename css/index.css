@@ -163,6 +163,13 @@ svg:hover {
 #about ul li {
     font-size: 18px;
     margin-top: 7px;
+    text-decoration: none;
+}
+
+#about ul li svg {
+    height: 18px;
+    width: 18px;
+    margin: 0;
 }
 
 /* About media query for mobile */
@@ -181,6 +188,11 @@ svg:hover {
 
     #about p, #about ul li {
         font-size: 1rem;
+    }
+
+    #about ul li svg {
+        height: 1rem;
+        width: 1rem;
     }
 
     #about ul li {
