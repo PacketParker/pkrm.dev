@@ -70,8 +70,8 @@ html.dark a {
     color: #9F9FAA;
 }
 
-h2 {
-    font-size: 25px;
+h3 {
+    font-size: 20px;
 }
 
 nav {
@@ -175,13 +175,19 @@ div {
 @media only screen and (max-width: 600px) {
     div {
         max-width: 90vw;
-        padding-top: 10vh;
+        padding-top: 15vh;
     }
 }
 
 pre {
     font-size: 20px;
     text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+    pre {
+        font-size: 16px;
+    }
 }
 
 .btn {
@@ -193,6 +199,13 @@ pre {
     border-radius: 5px;
     border-width: 30px;
     border: #444 solid 3px;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn {
+        padding: 15px 25px;
+        font-size: 18px;
+    }
 }
 
 html.dark .btn {
