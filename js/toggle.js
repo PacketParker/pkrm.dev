@@ -6,12 +6,14 @@ const sun = document.getElementById('sun');
  */
 if (localStorage.getItem('darkMode') === 'true') {
     turnDark();
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    turnDark();
 } else {
     turnLight();
 }
 
 /**
- * Update local storage with the current theme
+ * Change local storage to opposite of current stored value
  */
 function updateLocalStorage() {
     if (document.documentElement.classList.contains('dark')) {
@@ -22,9 +24,20 @@ function updateLocalStorage() {
 }
 
 /**
+ * Apply rainbow class, sleep, remove
+ */
+async function cycle_rainbow() {
+    document.body.classList.toggle('rainbow-mode');
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    document.body.classList.toggle('rainbow-mode');
+}
+
+/**
  * Toggle the theme to dark
  */
-function turnLight() {
+async function turnLight() {
+    await cycle_rainbow();
+
     document.documentElement.classList.remove('dark');
 
     sun.style.display = 'none';
@@ -56,6 +69,6 @@ moon.addEventListener('click', () => {
     turnDark();
 });
 
-sun.addEventListener('click', () => {
-    turnLight();
+sun.addEventListener('click', async () => {
+    await turnLight();
 });
