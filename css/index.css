@@ -4,26 +4,6 @@
     font-display: auto;
 }
 
-@keyframes rainbow {
-  0%   { color: hsl(0, 80%, 85%); }
-  20%  { color: hsl(45, 85%, 82%); }
-  40%  { color: hsl(90, 80%, 82%); }
-  60%  { color: hsl(180, 75%, 82%); }
-  80%  { color: hsl(260, 80%, 84%); }
-  100% { color: hsl(320, 85%, 85%); }
-}
-
-.rainbow-mode * {
-  animation: rainbow 1s ease-in-out 1;
-}
-
-/* make SVGs follow */
-.rainbow-mode svg,
-.rainbow-mode svg * {
-  fill: currentColor;
-  stroke: currentColor;
-}
-
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
